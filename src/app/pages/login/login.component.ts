@@ -12,6 +12,7 @@ export class LoginComponent {
 
   login(){
     localStorage.setItem('token', Math.random().toString());
+    //localStorage.removeItem('token');
     this.router.navigate(['/home'])
   }
 
