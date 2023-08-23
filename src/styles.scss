@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.button{
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    line-height: 40px;
+
+    &.logOut{
+        background-color: #cccccc;
+        width: auto;
+        padding: 0 30px;
+        &:hover{
+            color: #ffffff;
+            background-color: red;
+        }
+    }
+
+    &:hover{
+        background-color: #0476ff;
+        color: #ffffff;
+        cursor: pointer;
+    }
+}

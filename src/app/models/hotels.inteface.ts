@@ -3,4 +3,5 @@ export interface Hotel{
     name:string;
     description:string;
     score:number;
+    button:string;
 }
