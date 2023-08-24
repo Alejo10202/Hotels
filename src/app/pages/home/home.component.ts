@@ -14,13 +14,12 @@ export class HomeComponent {
     this.hotels = [
        { name:'test', description:'the best', score:9, image:'assets/img/hotel.jpg', button:'Ver'},
        { name:'test', description:'the best', score:9, image:'assets/img/hotel.jpg', button:'Ver'},
-       { name:'test', description:'the best', score:9, image:'assets/img/hotel.jpg', button:'Ver'}
+       { name:'test', description:'the best', score:9, image:'assets/img/hotel.jpg', button:'Ver'},
     ]
   }
 
   logOut(){
-    this.router.navigate(['/login'])
-    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 }
