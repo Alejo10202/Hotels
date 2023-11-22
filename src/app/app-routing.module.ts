@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, mapToCanDeactivate } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { authGuard } from './guards/auth.guard';
-import { exitGuard } from './guards/exit.guard';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './modules/login/login.component';
+import { UserComponent } from './modules/user/user/user.component';
 
 const routes: Routes = [
-  { path:'', redirectTo:'login', pathMatch:'full'},
-  { path:'login', component: LoginComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
 
-  { 
-    path:'home', component: HomeComponent,
-    canActivate: [authGuard],
-    canDeactivate: [exitGuard]
+  //Llamado al Home
+  {
+    path:'user', component:UserComponent,
+    children:[
+      { path:'', loadChildren: () => import('./modules/user/user.module').then((u) => u.UserModule)}
+    ]
   },
-
-  { path:'**', redirectTo:'login', pathMatch:'full'}
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

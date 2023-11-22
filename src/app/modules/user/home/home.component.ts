@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hotel } from '../../models/hotels.inteface';
+import { Hotel } from '../../../models/hotels.inteface';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',

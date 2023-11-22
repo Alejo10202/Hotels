@@ -1,0 +1,22 @@
+<div class="container-login">
+    <div class="custom-row">
+        <div class="login-form">
+            <h1>Login</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="first-group">
+                    <input
+                        [ngStyle]="{'box-shadow':loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']?'0px 0px 4px 0px red':''}"
+                        type="text" class="input-id-user" placeholder="Correo electrónico" id="email"
+                        formControlName="email">
+                </div><br />
+                <div class="second-group">
+                    <input
+                        [ngStyle]="{'box-shadow':loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']?'0px 0px 4px 0px red':''}"
+                        type="password" class="input-password" placeholder="Contraseña"
+                        id="password" formControlName="password" minlength="8">
+                </div>
+                <button class="button-login" [disabled]="validatedInputs()">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
