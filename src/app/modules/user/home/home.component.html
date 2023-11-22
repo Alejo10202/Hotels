@@ -2,4 +2,6 @@
     <h1>Home Hoteles</h1>
     <button class="button logOut" (click)="logOut()">Salir</button>
 </div>
-<app-cards *ngFor="let h of hotels" [hotels]="h"></app-cards>
+<div class="cards">
+    <app-cards *ngFor="let h of hotels" [hotels]="h"></app-cards>
+</div>
